@@ -97,20 +97,49 @@
         </section>
 
         <!-- Contact Form Modal -->
-        <div id="basicModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center p-4 z-50">
+        <div id="formModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center p-4 z-50">
             <div class="bg-white p-8 rounded-2xl shadow-xl max-w-md w-full relative">
                 <button id="closeModal" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 text-2xl">&times;</button>
-                <div class="text-center">
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Connect with SusySweetSteps</h3>
-                    <p class="text-gray-600 mb-6">
-                        Ready to explore our curated collection? The contact form will be added in the next step.
-                    </p>
-                    <div class="text-green-600 text-lg font-semibold">
-                        ✓ Modal is working! 
+                <h3 class="text-2xl font-bold text-gray-900 mb-4">Order Inquiry</h3>
+                <p class="text-sm text-gray-500 mb-6">
+                    A partner cigar shop will be in contact to finalize your order.
+                </p>
+                
+                <form id="contactForm" action="https://formspree.io/f/mnnbklny" method="POST" class="space-y-4">
+                    <div>
+                        <label for="email" class="block text-left text-sm font-medium text-gray-700">Email</label>
+                        <input type="email" id="email" name="email" class="mt-1 block w-full rounded-lg border border-gray-300 px-3 py-2 shadow-sm focus:border-indigo-500 focus:ring-indigo-500" required>
                     </div>
-                    <p class="text-gray-500 text-sm mt-2">
-                        Click the X or outside this box to close.
-                    </p>
+                    <div>
+                        <label for="phone" class="block text-left text-sm font-medium text-gray-700">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" class="mt-1 block w-full rounded-lg border border-gray-300 px-3 py-2 shadow-sm focus:border-indigo-500 focus:ring-indigo-500">
+                    </div>
+                    <div>
+                        <label for="product" class="block text-left text-sm font-medium text-gray-700">Product</label>
+                        <select id="product" name="product" class="mt-1 block w-full rounded-lg border border-gray-300 px-3 py-2 shadow-sm focus:border-indigo-500 focus:ring-indigo-500">
+                            <option value="" disabled selected>Select a product</option>
+                            <option value="Connecticut">Connecticut</option>
+                            <option value="Maduro">Maduro</option>
+                            <option value="Habano">Habano</option>
+                            <option value="Palio Siena Torch Lighter">Palio Siena Torch Lighter</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="quantity" class="block text-left text-sm font-medium text-gray-700">Quantity</label>
+                        <input type="number" id="quantity" name="quantity" class="mt-1 block w-full rounded-lg border border-gray-300 px-3 py-2 shadow-sm focus:border-indigo-500 focus:ring-indigo-500" min="1" value="1">
+                    </div>
+                    <div class="text-left text-xs text-gray-500 mt-4">
+                        <p>Your email and phone number are used solely to help a partner cigar shop fulfill your order inquiry. Your information will not be shared or sold.</p>
+                    </div>
+                    <button type="submit" class="w-full mt-4 py-3 px-6 border border-transparent shadow-sm text-base font-medium rounded-lg text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-all duration-300">
+                        Submit Inquiry
+                    </button>
+                </form>
+                
+                <!-- Success message (hidden by default) -->
+                <div id="successMessage" class="hidden text-center">
+                    <div class="text-green-600 text-lg font-semibold mb-2">✓ Message Sent!</div>
+                    <p class="text-gray-600 text-sm">Thank you for your inquiry. A partner shop will contact you soon.</p>
                 </div>
             </div>
         </div>
@@ -127,19 +156,19 @@
     <script>
         // Get elements
         const ctaButton = document.getElementById('ctaButton');
-        const basicModal = document.getElementById('basicModal');
+        const formModal = document.getElementById('formModal');
         const closeModal = document.getElementById('closeModal');
         const contactForm = document.getElementById('contactForm');
         const successMessage = document.getElementById('successMessage');
 
         // Show modal when CTA button is clicked
         ctaButton.addEventListener('click', () => {
-            basicModal.style.display = 'flex';
+            formModal.style.display = 'flex';
         });
 
         // Close modal when X button is clicked
         closeModal.addEventListener('click', () => {
-            basicModal.style.display = 'none';
+            formModal.style.display = 'none';
             // Reset form and show form content
             contactForm.style.display = 'block';
             successMessage.classList.add('hidden');
@@ -147,9 +176,9 @@
         });
 
         // Close modal when clicking outside the modal content
-        basicModal.addEventListener('click', (event) => {
-            if (event.target === basicModal) {
-                basicModal.style.display = 'none';
+        formModal.addEventListener('click', (event) => {
+            if (event.target === formModal) {
+                formModal.style.display = 'none';
                 contactForm.style.display = 'block';
                 successMessage.classList.add('hidden');
                 contactForm.reset();
@@ -181,7 +210,7 @@
                     
                     // Auto-close modal after 3 seconds
                     setTimeout(() => {
-                        basicModal.style.display = 'none';
+                        formModal.style.display = 'none';
                         contactForm.style.display = 'block';
                         successMessage.classList.add('hidden');
                     }, 3000);
