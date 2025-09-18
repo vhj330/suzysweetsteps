@@ -31,9 +31,7 @@
         <section class="flex flex-col md:flex-row items-center bg-white p-8 md:p-12 rounded-2xl shadow-xl">
             <div class="md:w-1/2 flex justify-center mb-6 md:mb-0">
                 <div class="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden shadow-lg">
-                    <!-- Profile image - we'll test this -->
                     <img src="profile.png" alt="Suzy's profile picture" class="object-cover w-full h-full" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                    <!-- Fallback if image doesn't load -->
                     <div class="w-full h-full bg-gradient-to-br from-pink-400 to-purple-500 flex items-center justify-center text-white text-2xl font-bold" style="display: none;">SS</div>
                 </div>
             </div>
@@ -45,10 +43,62 @@
             </div>
         </section>
 
+        <!-- Product Showcase -->
+        <section class="text-center">
+            <h2 class="text-3xl font-bold text-gray-900 mb-8">Curated Collection</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+                
+                <!-- Product Card 1 -->
+                <div class="bg-white p-6 rounded-2xl shadow-md transform hover:scale-105 transition-transform duration-300">
+                    <div class="h-32 w-32 mx-auto mb-4 rounded-lg overflow-hidden bg-gradient-to-br from-amber-100 to-amber-200 flex items-center justify-center">
+                        <img src="connecticut.jpg" alt="Connecticut Cigar" class="rounded-lg w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="text-amber-700 text-xs font-semibold text-center" style="display: none;">Connecticut<br>Cigar</div>
+                    </div>
+                    <h3 class="font-bold text-lg mb-1">Connecticut</h3>
+                    <p class="text-gray-500 text-sm">Mild and creamy, perfect for a smooth, relaxed smoke.</p>
+                </div>
+
+                <!-- Product Card 2 -->
+                <div class="bg-white p-6 rounded-2xl shadow-md transform hover:scale-105 transition-transform duration-300">
+                    <div class="h-32 w-32 mx-auto mb-4 rounded-lg overflow-hidden bg-gradient-to-br from-amber-800 to-amber-900 flex items-center justify-center">
+                        <img src="maduro.jpg" alt="Maduro Cigar" class="rounded-lg w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="text-amber-100 text-xs font-semibold text-center" style="display: none;">Maduro<br>Cigar</div>
+                    </div>
+                    <h3 class="font-bold text-lg mb-1">Maduro</h3>
+                    <p class="text-gray-500 text-sm">Sweet and rich, featuring dark chocolate and coffee undertones.</p>
+                </div>
+
+                <!-- Product Card 3 -->
+                <div class="bg-white p-6 rounded-2xl shadow-md transform hover:scale-105 transition-transform duration-300">
+                    <div class="h-32 w-32 mx-auto mb-4 rounded-lg overflow-hidden bg-gradient-to-br from-orange-200 to-red-300 flex items-center justify-center">
+                        <img src="habano.jpg" alt="Habano Cigar" class="rounded-lg w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="text-red-800 text-xs font-semibold text-center" style="display: none;">Habano<br>Cigar</div>
+                    </div>
+                    <h3 class="font-bold text-lg mb-1">Habano</h3>
+                    <p class="text-gray-500 text-sm">Earthy with hints of spice, delivering a full-bodied experience.</p>
+                </div>
+
+                <!-- Product Card 4 -->
+                <div class="bg-white p-6 rounded-2xl shadow-md transform hover:scale-105 transition-transform duration-300">
+                    <div class="h-32 w-32 mx-auto mb-4 rounded-lg overflow-hidden bg-gradient-to-br from-blue-600 to-blue-800 flex items-center justify-center">
+                        <img src="lighter.png" alt="Palio Siena Torch Lighter" class="rounded-lg w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="text-blue-100 text-xs font-semibold text-center" style="display: none;">Torch<br>Lighter</div>
+                    </div>
+                    <h3 class="font-bold text-lg mb-1">Palio Siena Torch Lighter</h3>
+                </div>
+            </div>
+        </section>
+
         <!-- Test Status -->
         <section class="bg-blue-100 border border-blue-400 text-blue-700 p-6 rounded-2xl text-center">
-            <h3 class="font-bold text-lg mb-2">Step 2 Test</h3>
-            <p>Upload an image named "profile.png" to test image display. You should see either your photo or the "SS" placeholder above.</p>
+            <h3 class="font-bold text-lg mb-2">Step 3 Test</h3>
+            <p>Upload these images to test the product showcase:</p>
+            <ul class="text-sm mt-2">
+                <li>• connecticut.jpg</li>
+                <li>• maduro.jpg</li>
+                <li>• habano.jpg</li>
+                <li>• lighter.png</li>
+            </ul>
         </section>
     </div>
 
