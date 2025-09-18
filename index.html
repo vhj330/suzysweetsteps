@@ -89,18 +89,64 @@
             </div>
         </section>
 
+        <!-- CTA Section -->
+        <section class="text-center">
+            <button id="ctaButton" class="bg-indigo-600 text-white font-bold py-4 px-12 rounded-full text-xl shadow-lg hover:bg-indigo-700 transition-colors duration-300 transform hover:scale-105">
+                Let's Connect
+            </button>
+        </section>
+
+        <!-- Basic Modal (No form yet) -->
+        <div id="basicModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center p-4 z-50">
+            <div class="bg-white p-8 rounded-2xl shadow-xl max-w-md w-full relative">
+                <button id="closeModal" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 text-2xl">&times;</button>
+                <div class="text-center">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Connect with SusySweetSteps</h3>
+                    <p class="text-gray-600 mb-6">
+                        Ready to explore our curated collection? The contact form will be added in the next step.
+                    </p>
+                    <div class="text-green-600 text-lg font-semibold">
+                        ✓ Modal is working! 
+                    </div>
+                    <p class="text-gray-500 text-sm mt-2">
+                        Click the X or outside this box to close.
+                    </p>
+                </div>
+            </div>
+        </div>
+
         <!-- Test Status -->
-        <section class="bg-blue-100 border border-blue-400 text-blue-700 p-6 rounded-2xl text-center">
-            <h3 class="font-bold text-lg mb-2">Step 3 Test</h3>
-            <p>Upload these images to test the product showcase:</p>
-            <ul class="text-sm mt-2">
-                <li>• connecticut.jpg</li>
-                <li>• maduro.jpg</li>
-                <li>• habano.jpg</li>
-                <li>• lighter.png</li>
-            </ul>
+        <section class="bg-green-100 border border-green-400 text-green-700 p-6 rounded-2xl text-center">
+            <h3 class="font-bold text-lg mb-2">Step 4 Test</h3>
+            <p>✓ CTA Button added</p>
+            <p>✓ Basic modal structure implemented</p>
+            <p class="text-sm mt-2">Click "Let's Connect" to test the modal!</p>
         </section>
     </div>
+
+    <script>
+        // Get elements
+        const ctaButton = document.getElementById('ctaButton');
+        const basicModal = document.getElementById('basicModal');
+        const closeModal = document.getElementById('closeModal');
+
+        // Show modal when CTA button is clicked
+        ctaButton.addEventListener('click', () => {
+            basicModal.style.display = 'flex';
+        });
+
+        // Close modal when X button is clicked
+        closeModal.addEventListener('click', () => {
+            basicModal.style.display = 'none';
+        });
+
+        // Close modal when clicking outside the modal content
+        basicModal.addEventListener('click', (event) => {
+            if (event.target === basicModal) {
+                basicModal.style.display = 'none';
+            }
+        });
+    </script>
 
 </body>
 </html>
