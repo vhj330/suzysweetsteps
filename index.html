@@ -21,6 +21,27 @@
 </head>
 <body class="min-h-screen p-4">
 
+    <!-- Age Gate Overlay -->
+    <div id="ageGate" class="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center p-4 z-50">
+        <div class="bg-white p-8 rounded-2xl shadow-xl max-w-md w-full text-center">
+            <h2 class="merriweather text-3xl font-bold text-gray-900 mb-4">Age Verification Required</h2>
+            <p class="text-gray-600 mb-6">
+                You must be at least 21 years old to view this website. This site contains information about tobacco products intended for adults only. If you do not meet the minimum age requirement, please do not enter this site.
+            </p>
+            <div class="space-y-3">
+                <button id="ageYes" class="w-full py-3 px-6 bg-indigo-600 text-white font-bold rounded-lg hover:bg-indigo-700 transition-colors duration-300">
+                    I am 21 or older
+                </button>
+                <button id="ageNo" class="w-full py-3 px-6 bg-gray-300 text-gray-700 font-bold rounded-lg hover:bg-gray-400 transition-colors duration-300">
+                    I am under 21
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content (hidden until age verified) -->
+    <div id="mainContent" style="display: none;">
+
     <div class="max-w-4xl mx-auto space-y-12">
         <!-- Branded Header -->
         <header class="text-center py-8">
@@ -163,6 +184,30 @@
     </div>
 
     <script>
+        // Age Gate Functionality
+        const ageGate = document.getElementById('ageGate');
+        const mainContent = document.getElementById('mainContent');
+        const ageYes = document.getElementById('ageYes');
+        const ageNo = document.getElementById('ageNo');
+        
+        // Check if user has already verified age (stored in session)
+        if (sessionStorage.getItem('ageVerified') === 'true') {
+            ageGate.style.display = 'none';
+            mainContent.style.display = 'block';
+        }
+        
+        ageYes.addEventListener('click', () => {
+            sessionStorage.setItem('ageVerified', 'true');
+            ageGate.style.display = 'none';
+            mainContent.style.display = 'block';
+        });
+        
+        ageNo.addEventListener('click', () => {
+            alert('You must be 21 or older to view this website.');
+            window.location.href = 'https://www.google.com';
+        });
+
+        // Contact Form Functionality
         const ctaButton = document.getElementById('ctaButton');
         const formModal = document.getElementById('formModal');
         const closeModal = document.getElementById('closeModal');
