@@ -82,7 +82,7 @@
         <!-- Product Showcase -->
         <section class="text-center">
             <h2 class="text-3xl font-bold text-gray-900 mb-8">Things I'm loving lately</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
                 
                 <!-- Product Card 1 -->
                 <div class="bg-white p-6 rounded-2xl shadow-md transform hover:scale-105 transition-transform duration-300">
@@ -112,15 +112,6 @@
                     </div>
                     <h3 class="font-bold text-lg mb-1">Habano</h3>
                     <p class="text-gray-500 text-sm">Earthy with hints of spice.</p>
-                </div>
-
-                <!-- Product Card 4 -->
-                <div class="bg-white p-6 rounded-2xl shadow-md transform hover:scale-105 transition-transform duration-300">
-                    <div class="h-32 w-32 mx-auto mb-4 rounded-lg overflow-hidden bg-gradient-to-br from-blue-600 to-blue-800 flex items-center justify-center">
-                        <img src="lighter.png" alt="Palio Siena Torch Lighter" class="rounded-lg w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                        <div class="text-blue-100 text-xs font-semibold text-center" style="display: none;">Torch<br>Lighter</div>
-                    </div>
-                    <h3 class="font-bold text-lg mb-1">Palio Siena Torch Lighter</h3>
                 </div>
             </div>
         </section>
@@ -161,10 +152,8 @@
                             <div class="product-row flex gap-2 mb-2">
                                 <select name="product[]" class="flex-1 rounded-lg border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500">
                                     <option value="">Select a product</option>
-                                    <option value="Connecticut">Connecticut</option>
-                                    <option value="Maduro">Maduro</option>
-                                    <option value="Habano">Habano</option>
-                                    <option value="Palio Siena Torch Lighter">Palio Siena Torch Lighter</option>
+                                    <option value="3-Cigar Sampler">3-Cigar Sampler</option>
+                                    <option value="5-Cigar Sampler">5-Cigar Sampler</option>
                                 </select>
                                 <input type="number" name="quantity[]" placeholder="Qty" min="1" value="1" class="w-20 rounded-lg border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500">
                                 <button type="button" class="remove-product text-red-600 hover:text-red-800 px-2" style="display: none;">&times;</button>
@@ -242,10 +231,8 @@
             newRow.innerHTML = `
                 <select name="product[]" class="flex-1 rounded-lg border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500">
                     <option value="">Select a product</option>
-                    <option value="Connecticut">Connecticut</option>
-                    <option value="Maduro">Maduro</option>
-                    <option value="Habano">Habano</option>
-                    <option value="Palio Siena Torch Lighter">Palio Siena Torch Lighter</option>
+                    <option value="3-Cigar Sampler">3-Cigar Sampler</option>
+                    <option value="5-Cigar Sampler">5-Cigar Sampler</option>
                 </select>
                 <input type="number" name="quantity[]" placeholder="Qty" min="1" value="1" class="w-20 rounded-lg border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500">
                 <button type="button" class="remove-product text-red-600 hover:text-red-800 px-2">&times;</button>
